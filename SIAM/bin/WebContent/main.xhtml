@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+ 
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+            <title>primestrap</title>
+        </f:facet>
+		
+ 
+        <f:facet name="middle">
+            <h:outputStylesheet library="plugins/bootstrap" name="bootstrap.css" />
+            <h:outputStylesheet library="plugins/jquery-ui" name="jquery-ui.min.css" />
+            <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet' type='text/css'></link>
+            <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'></link>
+            <h:outputStylesheet library="plugins/fancybox" name="jquery.fancybox.css" />
+            <h:outputStylesheet library="plugins/fullcalendar" name="fullcalendar.css" />
+            <h:outputStylesheet library="plugins/xcharts" name="xcharts.min.css" />
+            <h:outputStylesheet library="plugins/select2" name="select2.css" />
+            <h:outputStylesheet library="css" name="style.css" />
+            
+            <link rel="javascript" type="text/javascript" href="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
+            
+            
+            
+        </f:facet>
+        
+        <f:facet name="last">
+ 
+        </f:facet>
+ 
+    </h:head>
+              
+    <h:body>
+        <ui:include src="header.xhtml" />
+        <ui:include src="content.xhtml" />  
+            <h:outputScript library="plugins/jquery" name="jquery-2.1.0.min.js" />
+            <h:outputScript library="plugins/jquery-ui" name="jquery-ui.min.js" />
+            <h:outputScript library="plugins/bootstrap" name="bootstrap.min.js" />
+            <h:outputScript library="plugins/justified-gallery" name="jquery.justifiedgallery.min.js" />
+            <h:outputScript library="plugins/tinymce" name="tinymce.min.js" />
+            <h:outputScript library="plugins/tinymce" name="jquery.tinymce.min.js" />
+            <h:outputScript library="bootstrap/js" name="devoops.js" />
+    </h:body>
+</html>

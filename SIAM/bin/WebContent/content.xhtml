@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+ 
+    <ui:composition>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="sidebar-left" class="col-xs-2 col-sm-2">
+                    <ui:include src="leftMenu.xhtml" />
+                </div>
+                <div id="content" class="col-xs-12 col-sm-10">
+                	<div class="preloader">
+						<img src="../img/devoops_getdata.gif" class="devoops-getdata" alt="preloader"/>
+					</div>
+					<div id="ajax-content"></div>                    
+                    <ui:insert name="content" />                    
+                </div>
+            </div>
+        </div>
+    </ui:composition>
+</html>
+ 

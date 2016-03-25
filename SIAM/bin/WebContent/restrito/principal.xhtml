@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:sec="http://www.springframework.org/security/facelets/tags"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+	    <title>SIAM</title>
+	    <h:outputStylesheet library="css" name="estilo.css"/> 
+	</h:head>
+
+	<h:body>
+		<div id="barra_titulo">
+			<h1 id="titulo">SIAM</h1>
+		</div>
+		
+		<!-- <div>
+			<label>Usuário logado #{request.remoteUser}</label><br/>
+			<label>Nome do Usuário #{contextoMB.usuarioLogado.nome}</label>
+		</div> -->
+		<h:form id="conteudo">
+			<p:menubar style="font-size: 11pt;">
+				<p:submenu style="padding: 0em;" label="Produtos" icon="ui-icon-document">
+					<p:menuitem value="Lista de Produtos" style="font-size: 10pt;" action="produtos"/>
+				</p:submenu>
+				
+				
+				<f:facet name="options">
+					<h:outputText style="text-align: left; padding-top: 5px" value="#{contextoMB.usuarioLogado.nome} "/>
+		            <a style="padding-top: 5px" onclick="document.location='#{request.contextPath}/j_spring_security_logout'" title="Sair">
+				<h:graphicImage style="padding-top: 5px" library="imagens" name="logout16.png"/>
+			</a>
+		        </f:facet>
+			</p:menubar>
+			<sec:ifAnyGranted roles="ROLE_ADMINISTRADOR">
+				<h:commandLink action="/teste" title="Administrativo">
+					<h:graphicImage library="imagens" name="administrativo16.png"></h:graphicImage>
+				</h:commandLink>
+				<h:commandButton actionListener="#{usuarioMB.main}" value="Bootstrap"></h:commandButton>
+			</sec:ifAnyGranted>
+			
+			<a onclick="document.location='#{request.contextPath}/j_spring_security_logout'" title="Sair">
+				<h:graphicImage library="imagens" name="logout16.png"/>
+			</a>
+		</h:form>
+	</h:body>
+</html>

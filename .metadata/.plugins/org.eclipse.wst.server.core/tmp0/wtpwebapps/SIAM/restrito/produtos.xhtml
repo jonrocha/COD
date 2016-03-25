@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:sec="http://www.springframework.org/security/facelets/tags"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+	    <title>Produtos</title>
+	</h:head>
+
+	<h:body>
+		<h1>Lista de Produtos</h1>
+		
+		Usuário logado #{request.remoteUser}
+		<br/>
+		Nome do Usuário #{contextoMB.usuarioLogado.nome}
+		<h:form>
+			<sec:ifAnyGranted roles="ROLE_ADMINISTRADOR">
+				<h:commandLink action="/admin/principal" title="Administrativo">
+					<h:graphicImage library="imagens" name="administrativo16.png"></h:graphicImage>
+				</h:commandLink>
+			</sec:ifAnyGranted>
+			
+			<a onclick="document.location='#{request.contextPath}/j_spring_security_logout'" title="Sair">
+				<h:graphicImage library="imagens" name="logout16.png"/>
+			</a>
+			
+			<p:menubar style="height=10px;font-size: 11pt;">
+				<p:submenu label="Produtos" icon="ui-icon-document">
+					<p:menuitem value="Cadastrar Preço" style="font-size: 10pt;" url="#"/>
+				</p:submenu>
+			</p:menubar>
+			<br/>
+			<p:dataTable style="font-size: 11pt;" var="produto" value="#{ProdutoMB.listaProdutos}">
+			    <p:column headerText="Código">
+			        <h:outputText value="#{produto.id}" />
+			    </p:column>
+			 
+			    <p:column headerText="Produto">
+			        <h:outputText value="#{produto.nome}" />
+			    </p:column>
+			 
+			    <p:column headerText="Marca">
+			        <h:outputText value="#{produto.marca}" />
+			    </p:column>
+			 
+			    <p:column headerText="Preço">
+			        <h:outputText value="#{produto.preco}" />
+			    </p:column>
+			</p:dataTable>
+		</h:form>
+	</h:body>
+</html>
